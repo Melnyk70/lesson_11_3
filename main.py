@@ -1,16 +1,22 @@
-# This is a sample Python script.
+# ДЗ 11.3. Перевірка на парність.
+# Завдання ускладнюється.
+# Ваша функція is_even, як і раніше, повинна повертати True якщо число парне, або False якщо число непарне, але при цьому НЕ МОЖНА використовувати ділення у функції, та дії пов'язані з ним. Тобто. заборонено використовувати /, //, % та divmod
+# Складність ще полягає і в тому, щоб знайти рішення, яке не залежало б від розміру числа :)
+# Вхідні дані: Ціле число.
+# Вихідні дані: True або False
+# def is_even(number):
+#     pass
+# assert is_even(2494563894038**2) == True, 'Test1'
+# assert is_even(1056897**2) == False, 'Test2'
+# assert is_even(24945638940387**3) == False, 'Test3'
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+def is_even(number):
+    # Перетворюємо число на рядок і перевіряємо останню цифру
+    last_digit = str(number)[-1]
+    # Якщо остання цифра є однією з парних цифр, повертаємо True
+    return last_digit in '02468'
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+assert is_even(2494563894038**2) == True, 'Test1'
+assert is_even(1056897**2) == False, 'Test2'
+assert is_even(24945638940387**3) == False, 'Test3'
+print('Ok')
